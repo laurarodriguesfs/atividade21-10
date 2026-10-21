@@ -8,4 +8,12 @@ export default StyleSheet.create({
     marginVertical: spacing.lg, textAlign: 'center',
     color: colors.secondary, fontWeight: fonts.weight.bold,
   },
+
+  foto: {
+    width: 300,
+    height: 300,
+    borderRadius: 200,
+    alignSelf: 'center',
+    marginVertical: 16,
+  },
 });

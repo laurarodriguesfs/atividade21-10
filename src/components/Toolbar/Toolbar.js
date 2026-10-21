@@ -16,7 +16,7 @@ export default function Toolbar({ title, items = [], actionLabel, onAction }) {
     <View style={[styles.bar, { paddingTop: insets.top + 10 }]}>
       <View style={styles.top}>
         <View style={styles.side}>
-          <Logo size="sm" />
+          <Logo size="sm" tone="light" />
         </View>
 
         <Text style={styles.title} numberOfLines={1}>{title}</Text>

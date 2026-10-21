@@ -1,18 +1,26 @@
-import { View, Text } from 'react-native';
+import { Image } from 'react-native';
 import styles from './Logo.styles';
 
-export default function Logo({ size = 'md' }) {
-  const small = size === 'sm';
+const IMAGES = {
+  full: {
+    dark: require('../../../assets/logo.png'),
+    light: require('../../../assets/logo-c.png'),
+  },
+  mark: {
+    dark: require('../../../assets/logo.png'),
+    light: require('../../../assets/logo-c.png'),
+  },
+};
+
+export default function Logo({ size = 'md', variant = 'full', tone = 'dark' }) {
+  const style =
+    variant === 'mark' ? styles.mark : size === 'sm' ? styles.logoSm : styles.logo;
+
   return (
-    <View style={styles.row}>
-      <View style={[styles.marks, small && styles.marksSm]}>
-        <View style={[styles.navy, small && styles.shapeSm]} />
-        <View style={[styles.red, small && styles.shapeSm, small && styles.redSm]} />
-      </View>
-      <View>
-        <Text style={[styles.name, small && styles.nameSm]}>LAURA{'\n'}RODRIGUES</Text>
-        {!small && <Text style={styles.role}>arquiteta de sistemas</Text>}
-      </View>
-    </View>
+    <Image
+      source={IMAGES[variant][tone]}
+      style={style}
+      resizeMode="contain"
+    />
   );
 }

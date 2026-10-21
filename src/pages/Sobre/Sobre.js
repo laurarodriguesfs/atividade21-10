@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Image } from 'react-native';
 import Logo from '../../components/Logo/Logo';
 import Button from '../../components/Button/Button';
 import { globalStyles } from '../../styles/global';
@@ -15,9 +15,11 @@ export default function Sobre({ navigation }) {
     <ScrollView style={globalStyles.screen} contentContainerStyle={globalStyles.content}>
       <Text style={globalStyles.title}>Sobre</Text>
 
-      <View style={styles.logo}>
-        <Logo />
-      </View>
+      <Image
+        source={require('../../../assets/foto.jpg')}
+        style={styles.foto}
+        resizeMode="cover"
+      />
 
       <Text style={globalStyles.subtitle}>Laura Rodrigues · Arquiteta de Sistemas</Text>
       <Text style={globalStyles.text}>
